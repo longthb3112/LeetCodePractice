@@ -1,0 +1,22 @@
+class Solution {
+    public int reverse(int x) {
+       
+        long result = 0;
+        boolean negativeNum = false;
+        if(x < 0) {
+            negativeNum = true;
+            x = x * (-1);
+        }
+        while(x !=0){
+            int modNumber = x % 10;
+            result = (result * 10) + modNumber;
+            x= x/10;
+        }
+        if(negativeNum == true){
+            result = result * (-1);   
+        }        
+    
+         if(result > (Integer.MAX_VALUE) || result < (Integer.MIN_VALUE)) return 0;
+        return (int)result ;
+    }
+}
