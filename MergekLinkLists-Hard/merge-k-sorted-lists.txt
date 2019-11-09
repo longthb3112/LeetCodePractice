@@ -1,0 +1,29 @@
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists == null || lists.length  == 0) return null;
+        int length = lists.length;
+        ListNode min = new ListNode(Integer.MAX_VALUE);
+        int minIndex = -1;
+        int countNull = 0;
+        for(int i = 0 ; i< length;i++){
+            if(lists[i] != null) {
+                if( min.val > lists[i].val){
+                min = lists[i];
+                minIndex = i;
+                }    
+            }else{
+                countNull++;
+            } 
+        }
+        if(countNull == length - 1){
+            return min;
+        }
+	// for lists with all Nodes are null
+        if(countNull == length){
+            return null;
+        }
+        lists[minIndex] = lists[minIndex].next; 
+        min.next = mergeKLists(lists);
+        return min;
+    }
+}
