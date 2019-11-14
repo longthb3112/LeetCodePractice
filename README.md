@@ -5,5 +5,9 @@
 * [Roman-To-Integer](https://github.com/longthb3112/LeetCodePractice/tree/master/Roman-To-Integer-Easy)
 * [MergeTwoLinkLists](https://github.com/longthb3112/LeetCodePractice/tree/master/MergeTwoLinkLists-Easy)
 
+# MEDIUM
+* [longest-substring-without-repeating-characters](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxStringWithoutRepeatingCharacter-Medium)
+
 # HARD
 * [MergekLinkLists](https://github.com/longthb3112/LeetCodePractice/tree/master/MergekLinkLists-Hard)
+
