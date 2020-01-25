@@ -1,0 +1,36 @@
+//C# language 
+ public void FindPermutation(int[] items,int left)
+    {
+        var arrayInput = items;
+        if(left >= items.Length - 1) return;
+        if(left == 0)
+        {
+            printArray(items);
+        }       
+        findPermutation(items,left + 1);
+        
+        for(int i=left+1;i<items.Length ;i++)
+        {
+            int[] newArray = new int[arrayInput.Length];
+            arrayInput.CopyTo(newArray, 0);
+
+            var temp = newArray[left];
+            newArray[left] = newArray[i];
+            newArray[i] = temp;
+
+            printArray(newArray);
+            findPermutation(newArray,left + 1);
+        }       
+    }
+    public void printArray(int[] items)
+    {
+        for(int i=0;i< items.Length;i++)
+        {
+            Console.Write(items[i] + " ");
+        }
+        Console.WriteLine("");
+    }
+			
+		}                   
+        return new String(charResult);
+    }
