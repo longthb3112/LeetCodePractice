@@ -9,6 +9,7 @@
 
 # MEDIUM
 * [longest-substring-without-repeating-characters](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxStringWithoutRepeatingCharacter-Medium)
+* [Jump-Game-III](https://github.com/longthb3112/LeetCodePractice/tree/master/Jump-Game-III)
 
 # HARD
 * [MergekLinkLists](https://github.com/longthb3112/LeetCodePractice/tree/master/MergekLinkLists-Hard)
