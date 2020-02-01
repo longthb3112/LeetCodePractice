@@ -1,0 +1,23 @@
+//C# language 
+ public  bool CanReach(int[] arr, int start)
+        {
+            int[] trackArr = new int[arr.Length];
+
+            Queue<int> q = new Queue<int>();
+            q.Enqueue(start);
+
+            while (q.Count > 0)
+            {
+                int index = q.Dequeue();
+                if (arr[index] == 0) return true;
+
+                if (trackArr[index] == 0) 
+                {
+                    trackArr[index] = 1;
+                    if (index - arr[index] >= 0) q.Enqueue(index - arr[index]);
+                    if (index + arr[index] < arr.Length) q.Enqueue(index + arr[index]);
+                } 
+            }        
+            return false;
+        }
+   
