@@ -1,5 +1,5 @@
 # Description
-reverse string exception special character
+reverse string except special character
 
 # Example 1:
 Input:
