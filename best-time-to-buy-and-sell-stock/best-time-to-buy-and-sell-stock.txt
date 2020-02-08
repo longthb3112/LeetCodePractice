@@ -1,0 +1,36 @@
+//C# language 
+ public int MaxProfit(int[] prices)
+        {
+            int maxProfit = 0;
+            for (int i = 0; i < prices.Length - 1; i++)
+                for (int j = i + 1; j < prices.Length; j++)
+                {
+                    if (prices[j] - prices[i] > maxProfit)
+                    {
+                        maxProfit = prices[j] - prices[i];
+                    }
+                }
+            return maxProfit;
+        }
+
+        //One pass
+        public int MaxProfit2(int[] prices)
+        {
+            int minProfit = int.MaxValue;
+            int maxProfit = 0;
+            for (int i = 0; i < prices.Length; i++)
+            {
+                if (prices[i] < minProfit)
+                {
+                    minProfit = prices[i];
+                }
+                else
+                {
+                    if (prices[i] - minProfit > maxProfit)
+                    {
+                        maxProfit = prices[i] - minProfit;
+                    }
+                }
+            }
+            return maxProfit;
+        }
