@@ -1,0 +1,14 @@
+//C# language 
+public int Tribonacci(int n) {
+        Dictionary<int,int> tDic = new Dictionary<int,int>();
+        tDic.Add(0,0);
+        tDic.Add(1,1);
+        tDic.Add(2,1);
+        
+        for(int i = 3 ;i<= n ;i++)
+        {
+            int value = tDic[i - 1] + tDic[i - 2] + tDic[i -3];
+            tDic.Add(i,value);
+        }
+        return tDic[n];
+    }
