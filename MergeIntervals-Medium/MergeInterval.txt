@@ -1,0 +1,38 @@
+//C# language 
+public int[][] Merge(int[][] intervals) {
+			//check edge cases
+            if(intervals == null || intervals.Length == 0) return intervals;
+       
+            
+            int length = intervals.Length;
+			//sort start and end
+            int[] start = new int[length];        
+            int[] end = new int[length];
+        
+            for(int i=0;i<length;i++){
+                start[i]=intervals[i][0];
+                end[i]=intervals[i][1];
+            }
+        
+            Array.Sort(start);
+            Array.Sort(end);
+			
+			//compare start[i + 1] with end[i]
+            int[][] result = new int[intervals.Length][];         
+            int currentResultIndex = 0;
+            for(int i = 0,j =0;i<length;i++)
+            {
+                if(i == length - 1 || start[i + 1] > end[i])
+                {
+                    result[currentResultIndex++] = new int[]{start[j],end[i]};
+                        j = i + 1;
+                }
+            }
+            //trim null value
+            int[][] trimResult = new int[currentResultIndex][];
+            for(int k=0;k<currentResultIndex;k++)
+            {
+               trimResult[k] = new int[]{result[k][0],result[k][1]}; 
+            }
+            return trimResult;
+    }
