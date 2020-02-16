@@ -7,6 +7,10 @@
 * [ReverseString](https://github.com/longthb3112/LeetCodePractice/tree/master/ReverseString)
 * [Permutation](https://github.com/longthb3112/LeetCodePractice/tree/master/Permutation)
 * [BestTimeToSellStock](https://github.com/longthb3112/LeetCodePractice/tree/master/best-time-to-buy-and-sell-stock)
+* [BalanceBinaryTree](https://github.com/longthb3112/LeetCodePractice/tree/master/BalanceBinaryTree)
+* [MaxDepthBinaryTree](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxDepthBinaryTree)
+* [MinimumDepthBinaryTree](https://github.com/longthb3112/LeetCodePractice/tree/master/MinimumDepthBinaryTree)
+* [MaxDepthTree-N](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxDepthTree-N)
 
 # MEDIUM
 * [longest-substring-without-repeating-characters](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxStringWithoutRepeatingCharacter-Medium)
