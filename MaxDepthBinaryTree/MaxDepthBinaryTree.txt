@@ -1,0 +1,15 @@
+//C# language 
+   public int MaxDepth(TreeNode root) {
+        if(root == null) return 0;
+        if(root.left == null && root.right == null) return 1;
+        int depth = 0 ;
+        if(root.left != null)
+        {
+            depth = Math.Max(depth, MaxDepth(root.left));
+        }
+        if(root.right != null)
+        {
+            depth = Math.Max(depth, MaxDepth(root.right));
+        }
+        return depth + 1;
+    }
