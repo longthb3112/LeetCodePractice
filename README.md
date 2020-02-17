@@ -11,6 +11,7 @@
 * [MaxDepthBinaryTree](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxDepthBinaryTree)
 * [MinimumDepthBinaryTree](https://github.com/longthb3112/LeetCodePractice/tree/master/MinimumDepthBinaryTree)
 * [MaxDepthTree-N](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxDepthTree-N)
+* [IncreasingOrderSearchTree](https://github.com/longthb3112/LeetCodePractice/tree/master/IncreasingOrderSearchTree)
 
 # MEDIUM
 * [longest-substring-without-repeating-characters](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxStringWithoutRepeatingCharacter-Medium)
