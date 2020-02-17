@@ -1,0 +1,12 @@
+//C# language 
+   public TreeNode IncreasingBST(TreeNode root) {
+        return IncreaseBST(root,null);
+    }
+    public TreeNode IncreaseBST(TreeNode root, TreeNode next)
+    {
+        if(root == null) return next;
+        TreeNode result = IncreaseBST(root.left,root);
+        root.left = null;
+        root.right = IncreaseBST(root.right,next);
+        return result;
+    }
