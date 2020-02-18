@@ -1,0 +1,78 @@
+//C# language 
+//normal 
+ public bool LeafSimilar(TreeNode root1, TreeNode root2) 
+    {
+        if(root1 == null || root2 == null) return false;
+        if(root1 == null && root2 == null) return true;
+        if(root1.left == null && root1.right == null && root2.left == null && root2.right == null)
+        {
+            if(root1.val != root2.val)
+                return false;
+        }
+        var queue1 = new Queue<int>();
+        var queue2 = new Queue<int>();
+        queue1 = GetLeaves(root1,queue1);
+        queue2 = GetLeaves(root2,queue2);
+        if(queue1.Count != queue2.Count) return false;
+        while(queue1.Count > 0)
+        {
+            var value1 = queue1.Dequeue();
+            var value2 = queue2.Dequeue();
+            if(value1 != value2) return false;
+        }
+        return true;
+    }
+    public Queue<int> GetLeaves(TreeNode root,Queue<int> leaves)
+    {
+       if(root.left == null && root.right == null)
+       {
+           leaves.Enqueue(root.val);
+       }
+        else
+        {
+            if(root.left != null)
+            {
+                GetLeaves(root.left,leaves);
+            }
+            if(root.right != null)
+            {
+                GetLeaves(root.right,leaves);
+            }
+        }
+        return leaves;
+         
+    }
+//optimize
+ public bool LeafSimilar(TreeNode root1, TreeNode root2) 
+    {
+        if(root1 == null || root2 == null) return false;
+        if(root1 == null && root2 == null) return true;
+        if(root1.left == null && root1.right == null && root2.left == null && root2.right == null)
+        {
+            if(root1.val != root2.val)
+                return false;
+        }
+        
+        var stack1 = new Stack<TreeNode>();
+        var stack2 = new Stack<TreeNode>();
+        stack1.Push(root1);
+        stack2.Push(root2);
+        
+        while(stack1.Count > 0  && stack2.Count > 0)
+        {
+            if(dfs(stack1) != dfs(stack2)) return false;
+        }
+        return true;
+    }
+    public int dfs(Stack<TreeNode> s)
+    {
+       while(s.Count > 0)
+       {
+           var node = s.Pop();
+           if(node.left != null) s.Push(node.left);
+           if(node.right != null) s.Push(node.right);
+           if(node.left == null && node.right == null) return node.val;
+       }
+        return 0;
+         
+    }
