@@ -1,0 +1,27 @@
+//C# language 
+public int getImportance(List<Employee> employees, int id) {
+        if(employees == null || employees.size() == 0) return 0;
+        HashMap<Integer,Integer> mapImportant = new HashMap<Integer,Integer>();
+        HashMap<Integer,List<Integer>> mapChildren = new HashMap<Integer,List<Integer>>();
+        for(Employee emp : employees){
+            mapImportant.put(emp.id,emp.importance);
+            mapChildren.put(emp.id,emp.subordinates);
+        }
+        int value = mapImportant.get(id);
+        
+        for(int child : mapChildren.get(id)){
+           Queue<Integer> childs = new LinkedList<Integer>();
+            childs.add(child);
+        
+            while(childs.size() > 0){
+                int item = childs.remove();
+                value += mapImportant.get(item);
+                List<Integer> childItems = mapChildren.get(item);
+                for(int childItem : childItems){
+                    childs.add(childItem);
+                }
+            }
+        }
+        return value;
+        
+    }
