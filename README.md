@@ -14,6 +14,7 @@
 * [IncreasingOrderSearchTree](https://github.com/longthb3112/LeetCodePractice/tree/master/IncreasingOrderSearchTree)
 *[SimilarLeaves](https://github.com/longthb3112/LeetCodePractice/tree/master/SimilarLeaves)
 *[EmployeeImportant](https://github.com/longthb3112/LeetCodePractice/tree/master/EmployeeImportant-Easy)
+*[LongestPrefix](https://github.com/longthb3112/LeetCodePractice/tree/master/LongestPrefix%20-%20Easy)
 
 # MEDIUM
 * [longest-substring-without-repeating-characters](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxStringWithoutRepeatingCharacter-Medium)
