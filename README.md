@@ -15,9 +15,9 @@
 * [SimilarLeaves](https://github.com/longthb3112/LeetCodePractice/tree/master/SimilarLeaves)
 * [EmployeeImportant](https://github.com/longthb3112/LeetCodePractice/tree/master/EmployeeImportant-Easy)
 * [LongestPrefix](https://github.com/longthb3112/LeetCodePractice/tree/master/LongestPrefix%20-%20Easy)
-* [ConvertSortedArrayToString] (https://github.com/longthb3112/LeetCodePractice/tree/master/ConvertSortedArrayToBST-easy)
-* [FloodFill] (https://github.com/longthb3112/LeetCodePractice/tree/master/FloodFill%20-%20Easy)
-* [IsSameTree] (https://github.com/longthb3112/LeetCodePractice/tree/master/IsSameTree%20-%20Easy)
+* [ConvertSortedArrayToString](https://github.com/longthb3112/LeetCodePractice/tree/master/ConvertSortedArrayToBST-easy)
+* [FloodFill](https://github.com/longthb3112/LeetCodePractice/tree/master/FloodFill%20-%20Easy)
+* [IsSameTree](https://github.com/longthb3112/LeetCodePractice/tree/master/IsSameTree%20-%20Easy)
 
 # MEDIUM
 * [longest-substring-without-repeating-characters](https://github.com/longthb3112/LeetCodePractice/tree/master/MaxStringWithoutRepeatingCharacter-Medium)
