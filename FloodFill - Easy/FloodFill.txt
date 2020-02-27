@@ -1,0 +1,27 @@
+//C# language 
+ public int[][] FloodFill(int[][] image, int sr, int sc, int newColor) 
+    {
+            int color = image[sr][sc];
+            if(color != newColor) dfs4D(image,sr,sc,color,newColor);
+        return image;
+    }
+    public int[][] dfs4D(int[][] image, int sr,int sc, int color, int newColor)
+    {
+        if(image[sr][sc] == color)
+        {
+            image[sr][sc] = newColor;
+            //dfs 4 direction
+            //Up
+            if(sr >= 1) dfs4D(image,sr -1,sc,color,newColor );
+            
+            //Down
+            if(sr + 1 < image.Length) dfs4D(image,sr + 1,sc,color,newColor);
+            
+            //Left
+            if(sc >= 1) dfs4D(image,sr,sc -1,color,newColor);
+            
+            //Right
+            if(sc + 1 < image[0].Length) dfs4D(image,sr,sc + 1, color, newColor);
+        }
+        return image;
+    }

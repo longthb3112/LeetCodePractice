@@ -1,0 +1,48 @@
+//C# language 
+//optimize
+    public bool IsSameTree(TreeNode p, TreeNode q) 
+{
+	if(p == null && q == null) return true;
+	if(p == null || q == null) return false;
+	if(p.val != q.val) return false;
+	return IsSameTree(p.left,q.left) && IsSameTree(p.right,q.right);
+}
+// Normal with queue
+ public bool IsSameTree(TreeNode p, TreeNode q) {
+        if(p == null && q ==null) return true;
+        if(p == null || q == null) return false;
+        if(p.val != q.val ) return false;
+        
+        Queue<TreeNode> left = new Queue<TreeNode>();
+        Queue<TreeNode> right = new Queue<TreeNode>();
+        left.Enqueue(p);
+        right.Enqueue(q);
+        
+        while(left.Count > 0 && right.Count > 0 && left.Count == right.Count) 
+        {
+            var item1 = left.Dequeue();
+            var item2 = right.Dequeue();
+            if(item1.val != item2.val) return false;
+            if(item1.left != null && item2.left != null)
+            {
+                left.Enqueue(item1.left);
+                right.Enqueue(item2.left);
+            }
+            else if((item1.left == null && item2.left != null) || (item1.left != null && item2.left == null))
+            {
+                return false;
+            }
+                    
+            if(item1.right != null && item2.right != null)
+            {
+                left.Enqueue(item1.right);
+                right.Enqueue(item2.right);
+            }
+            else if((item1.right == null && item2.right != null) || (item1.right != null &&   item2.right == null))
+            {
+                return false;
+            }
+        }
+        if(left.Count != right.Count) return false;
+        return true;
+    }
