@@ -1,0 +1,28 @@
+//C# language 
+   public IList<string> BinaryTreePaths(TreeNode root) {
+        if(root == null) return new List<String>();
+        if(root.left == null && root.right == null) return new List<String>(){root.val.ToString()};
+        
+        string path = "";
+        var list = new List<String>();
+        dfs(root,path,list);
+        return list;
+    }
+    public void dfs(TreeNode root, string path, List<String> list)
+    {
+        if(path == "") path = root.val.ToString();
+        else
+        {
+            path = path += "->"+ root.val;    
+        }
+        
+        if(root.left == null && root.right == null) list.Add(path);
+        if(root.left != null)
+        {
+            dfs(root.left,path,list);
+        }
+        if(root.right != null)
+        {
+            dfs(root.right,path,list);
+        }
+    }
