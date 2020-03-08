@@ -1,4 +1,5 @@
 //C# language 
+// Normal
 public class BSTIterator {
     Queue<int> smallestQueue;
     
@@ -24,4 +25,50 @@ public class BSTIterator {
         return smallestQueue.Count > 0 ;
     }
     
+}
+//Optimize
+public class BSTIterator {
+    Stack<TreeNode> stack;
+    
+    public BSTIterator(TreeNode root) {
+        stack  = new Stack<TreeNode>();
+        TraverseLeftMost(root);
+    }
+    private void TraverseLeftMost(TreeNode root)
+    {
+		while(root != null)
+		{
+			stack.push(root);
+			root = root.left;
+		}
+    }
+    /** @return the next smallest number */
+    public int Next() {
+      if(stack.Count > 0)
+	  {
+		var topNode = stack.Pop();
+		//if topNode has right branch, continue to find smallest in right branch
+		if(topNode.right != null)
+		{
+			TraverseLeftMost(topNode.right);
+		}
+		return topNode.val;
+	  }
+	  return 0;
+    }
+    
+    /** @return whether we have a next smallest number */
+    public bool HasNext() {
+        return stack.Count > 0 ;
+    }
+    
+}
+
+//Traverse BST in order Left middle Right
+void TraverseInOrder(TreeNode root, Queue<int> queue)
+{
+	if(root == null) return;
+	TraverseInOrder(root.left);
+	queue.Enqueue(root.val);
+	TraverseInOrder(root.right);
 }
