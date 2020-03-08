@@ -1,0 +1,27 @@
+//C# language 
+public class BSTIterator {
+    Queue<int> smallestQueue;
+    
+    public BSTIterator(TreeNode root) {
+        smallestQueue  = new Queue<int>();
+        TraverseInOrder(root,smallestQueue);
+    }
+    private void TraverseInOrder(TreeNode root, Queue<int> smallestQueue)
+    {
+	if(root == null) return;
+	TraverseInOrder(root.left,smallestQueue);
+	smallestQueue.Enqueue(root.val);
+	TraverseInOrder(root.right,smallestQueue);
+    }
+    /** @return the next smallest number */
+    public int Next() {
+        if(smallestQueue.Count > 0) return smallestQueue.Dequeue();
+        return 0;
+    }
+    
+    /** @return whether we have a next smallest number */
+    public bool HasNext() {
+        return smallestQueue.Count > 0 ;
+    }
+    
+}
