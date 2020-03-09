@@ -1,0 +1,32 @@
+//C# language 
+ public IList<IList<int>> PathSum(TreeNode root, int sum) {
+        if(root == null) return new List<IList<int>>();
+        if(root.left == null && root.right == null && root.val == sum) return new List<IList<int>>
+{
+    new List<int>() { root.val },
+ 
+};
+        var result = new List<IList<int>>();
+        var currentPath = new List<int>();
+        FindPaths(root,result,currentPath,sum);
+        return result;
+    }
+    public void FindPaths(TreeNode root, IList<IList<int>> result,IList<int> currentPath, int sum)
+    {
+        if(root.left == null && root.right == null && sum - root.val == 0) 
+        {
+            currentPath.Add(root.val);
+            result.Add(currentPath);
+            return;
+        }
+        currentPath.Add(root.val);
+        sum = sum - root.val;
+        if(root.left != null)
+        {
+            FindPaths(root.left,result,new List<int>(currentPath),sum);
+        }
+        if(root.right != null)
+        {
+            FindPaths(root.right,result,new List<int>(currentPath),sum);
+        }
+    }
