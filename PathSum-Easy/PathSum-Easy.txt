@@ -1,0 +1,23 @@
+//C# language 
+ public bool HasPathSum(TreeNode root, int sum) {
+        if(root == null) return false;
+        if(root.left == null && root.right == null && root.val == sum) return true;
+        if(root.val == sum) return false;
+        
+        return CalculatePathSum(root,0,sum);
+    }
+    public bool CalculatePathSum(TreeNode root, int currentSum, int sum)
+    {   
+        if(root.left == null && root.right == null) return currentSum + root.val == sum;
+		currentSum += root.val;
+		if(root.left != null)
+		{
+			var left = CalculatePathSum(root.left,currentSum,sum);
+			if(left == true) return left;
+		}
+		if(root.right != null)
+		{
+			return CalculatePathSum(root.right,currentSum,sum);
+		}
+		return false;
+    }
